@@ -38,7 +38,6 @@ public:
 };
 
 //sort + two pointer, easier to understand
-//https://leetcode.com/problems/two-sum/discuss/7/Java-O(nlogn)-beats-98.85
 //Runtime: 340 ms, faster than 86.87% of C++ online submissions for Number of Subsequences That Satisfy the Given Sum Condition.
 //Memory Usage: 50.1 MB, less than 100.00% of C++ online submissions for Number of Subsequences That Satisfy the Given Sum Condition.
 //time: O(NlogN), space: O(N)
