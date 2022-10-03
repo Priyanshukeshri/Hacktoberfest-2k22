@@ -156,7 +156,6 @@ public:
 };
 
 //backtracking
-//https://leetcode.com/problems/sudoku-solver/discuss/15752/Straight-Forward-Java-Solution-Using-Backtracking
 //Runtime: 28 ms, faster than 58.89% of C++ online submissions for Sudoku Solver.
 //Memory Usage: 6.5 MB, less than 82.12% of C++ online submissions for Sudoku Solver.
 class Solution {
@@ -214,7 +213,6 @@ public:
 };
 
 //backtracking, improved from above
-//https://leetcode.com/problems/sudoku-solver/discuss/15752/Straight-Forward-Java-Solution-Using-Backtracking/15800
 //Runtime: 20 ms, faster than 75.81% of C++ online submissions for Sudoku Solver.
 //Memory Usage: 6.6 MB, less than 69.50% of C++ online submissions for Sudoku Solver.
 class Solution {
@@ -264,7 +262,6 @@ public:
 };
 
 //reactive-network + backtracking
-//https://leetcode.com/problems/sudoku-solver/discuss/15748/Sharing-my-2ms-C%2B%2B-solution-with-comments-and-explanations.
 //Runtime: 0 ms, faster than 100.00% of C++ online submissions for Sudoku Solver.
 //Memory Usage: 6.7 MB, less than 48.20% of C++ online submissions for Sudoku Solver.
 struct cell{
