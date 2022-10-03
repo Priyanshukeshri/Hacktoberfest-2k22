@@ -1,4 +1,4 @@
-//https://leetcode.com/problems/rotate-image/discuss/18872/A-common-method-to-rotate-the-image
+
 //Runtime: 0 ms, faster than 100.00% of C++ online submissions for Rotate Image.
 //Memory Usage: 7.3 MB, less than 45.79% of C++ online submissions for Rotate Image.
 class Solution {
