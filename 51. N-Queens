@@ -1,0 +1,49 @@
+vector<vector<string> >ans;
+    void solve(int n,vector<string>&board,bool up[],bool down[],bool line[],int col=0)
+    {
+        if(col == n)
+        {
+            ans.push_back(board);
+            return;
+        }
+
+        for(int row=0;row<n;row++)
+        {
+            if(line[row] == false && down[row+col] == false && up[n-1+col-row] == false)
+            {
+                board[row][col] = 'Q';
+                
+                line[row] = true;
+                down[row+col] = true; 
+                up[n-1+col-row] = true;
+                
+                solve(n,board,up,down,line,col+1);
+                
+                line[row] = false;
+                down[row+col] = false; 
+                up[n-1+col-row] = false;
+                
+                board[row][col] = '.';
+            }
+        }
+    }
+        
+    vector<vector<string>> solveNQueens(int n) 
+    {
+        string str(n,'.');
+        vector<string>board(n);
+        
+        for(int i=0;i<n;i++)
+        board[i] = str;
+
+        bool row[n];
+        fill(row,row+n,false);
+        bool down[2*n-1];
+        fill(down,down+(2*n-1),false);
+        bool up[2*n - 1];
+        fill(up,up+(2*n-1),false);
+        
+        solve(n,board,up,down,row);
+
+        return ans;
+    }
