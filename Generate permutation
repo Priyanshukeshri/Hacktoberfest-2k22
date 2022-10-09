@@ -1,0 +1,77 @@
+#include<bits/stdc++.h>
+using namespace std;
+//========================= USING HASH MAP  ===========================================================//
+void generatepermutation(vector<vector<int>> &ans,vector<int> &frenquecy,vector<int> &v,vector<int>ds )
+{
+	if(ds.size()==v.size())
+	{
+		return ans.push_back(ds);
+	}
+
+	for(int i=0;i<v.size();i++)
+	{
+		if(frenquecy[i]==0)
+		{
+			ds.push_back(v[i]);
+			frenquecy[i]=1;
+
+			generatepermutation(ans,frenquecy,v,ds);
+
+			frenquecy[i]=0;
+			ds.pop_back();
+		}
+	}
+}
+// time complexity : O(n! * n)
+// space complexity : O(n)+O(n)
+//========================================Aprroach 2==================================================
+
+
+void generatepermutation2(vector<vector<int>> &ans,int index,vector<int> &v)
+{
+	if(index==v.size())
+	{
+		ans.push_back(v);
+		return;
+	}
+
+	for(int i=index;i<v.size();i++)
+	{
+		swap(v[i],v[index]);
+		generatepermutation2(ans,index+1,v);
+		swap(v[i],v[index]);
+	}
+
+	// time complexity : O(n! * n)
+	// space complexity : O(n) 
+
+}
+
+int main()
+{
+	vector<vector<int>> ans;
+	vector<int> ds,v;
+	int n;
+	cin>>n; 
+
+	vector<int> frenquecy(n,0);
+
+	while(n--)
+	{
+		int x;
+		cin>>x;
+		v.push_back(x);
+	}
+
+	//generatepermutation(ans,frenquecy,v,ds);
+	generatepermutation2(ans,0,v);
+
+	for(auto x:ans)
+	{
+		for(auto y:x)
+			cout<<y<<" ";
+		cout<<endl;
+	}
+
+
+}
