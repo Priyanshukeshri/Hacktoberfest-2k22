@@ -1,0 +1,43 @@
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+	string s,s1, s2 = "abcdefghijklmnopqrstuvwxyz";
+	cin>>s;
+	vector<char> v;
+	int j=0,p=0;
+	int k = s.find('a');
+	if (k<=s.size()-1 && k>=0)
+	{
+		for (int i=k; i<s.size(); i++)
+		{
+			char ch = (char)('a'+j);
+			p++;
+			if (s[i]<=ch)
+			{
+				v.push_back(ch);
+				j++;
+			}
+			else
+			{
+			    v.push_back(s[i]);
+			}
+			if (j==26) 
+			break;
+		}
+		for (int i=0; i<v.size(); i++)
+		s1 += v[i];
+		if (j==26)
+		{
+			cout<<s.substr(0,k);
+			for (int i=0; i<v.size(); i++)
+			cout<<v[i];
+			cout<<s.substr(k+p,s.size()-k-p);
+		}
+		else
+		cout<<"-1";
+	}
+	else
+	cout<<"-1";
+}
